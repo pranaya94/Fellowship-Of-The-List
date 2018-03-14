@@ -1,0 +1,23 @@
+.UserInput{
+  display : flex;
+  padding-top : 10px;
+  padding-bottom : 10px;
+  height : 50px;
+}
+
+.inputBox{
+ box-sizing: border-box;
+ display : inline-block;
+ border-radius: 5px;
+ border-style: none;
+ width : 90%;
+ height : 50px;
+ padding-top : 5px;
+ padding-left : 20px;
+ padding-right: 20px;
+}
+
+.add{
+font-size: 50px;
+margin-left: 20px;
+}
