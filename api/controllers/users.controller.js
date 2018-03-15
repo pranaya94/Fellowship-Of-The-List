@@ -92,7 +92,7 @@ module.exports.authenticate = function(req,res,next){
 	if(headerExists){
 
 		var token = req.headers.authorization.split(' ')[1];
-		console.log(token);
+		
 		jwt.verify(token,'s3cr3t',function(error,decoded){
 
 			if(error){

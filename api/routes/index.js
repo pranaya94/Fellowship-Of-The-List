@@ -14,7 +14,7 @@ router
 
 router
 	.route('/todo/tasks')	
-	.get(tasksCtrl.getAllTasks)
+	.get(usersCtrl.authenticate,tasksCtrl.getAllTasks)
 	.post(usersCtrl.authenticate,tasksCtrl.addTask);
 
 router

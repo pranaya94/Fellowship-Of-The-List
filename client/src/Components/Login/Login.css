@@ -1,6 +1,12 @@
+.Login{
+	background-color: #f5f9fa;
+	min-height: 100%;
+	position: relative;
+	top : 100px;
+}
+
 .LoginForm{	
 	text-align: left;
-	position: relative;
 	margin: auto;
 	top: 180px;
 	width: 25%;

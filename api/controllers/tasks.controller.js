@@ -18,9 +18,9 @@ module.exports.getAllTasks = function(req,res){
 						.json("Error getting pg client from pool");
 
 				}else{
-
-					// client.query("SELECT * FROM tasks WHERE userid = '" + req.userid.trim() + "'",(err,data) => {	
-					client.query("SELECT * FROM tasks WHERE userid = 'SkX91xxtf'",(err,data) => {		
+			
+					client.query("SELECT * FROM tasks WHERE userid = '" + req.userid.trim() + "'",(err,data) => {	
+					// client.query("SELECT * FROM tasks WHERE userid = 'SkX91xxtf'",(err,data) => {		
 
 								done(); //release client back to pool
 								if(err){
@@ -29,7 +29,6 @@ module.exports.getAllTasks = function(req,res){
 										.status(400)
 										.json(err);									
 								}else{
-									console.log(data.rows);
 
 									res
 										.status(200)

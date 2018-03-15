@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import './LoginForm.css';
-import RegisterForm from '../../Register/RegisterForm/RegisterForm';
+import './Login.css';
+import RegisterForm from '../Register/RegisterForm/RegisterForm';
 import {Link} from 'react-router-dom';
 
-class LoginForm extends Component{
+class Login extends Component{
 
 	constructor(props){
 
@@ -21,9 +21,11 @@ class LoginForm extends Component{
 		let targetField = e.target.name;
 		this.setState({
 			[targetField] : e.target.value //computed property name ES6
-		})		
+		})		 
 											//stage changes are merged
 	}
+
+	
 
 	handleSubmit(){
 
@@ -31,8 +33,10 @@ class LoginForm extends Component{
 		xhttp.onreadystatechange = function(){
 
 			if(this.readyState == 4 && this.status == 201){
-				let token = JSON.parse(this.responseText);
-				window.localStorage.setItem('access_token',token['data'])
+				let token = JSON.parse(this.responseText);				
+				window.localStorage.setItem('access_token',token['data']);
+				window.location = '/ToDo'; // Check : refactor with React router
+				
 			}
 		};
 
@@ -41,9 +45,11 @@ class LoginForm extends Component{
 		xhttp.send(JSON.stringify(this.state));
 	}
 
+
 	render(){
 
 		return(							
+					<div className = "Login">	
 						<form className = "LoginForm">
 
 							<div className = "form-group">
@@ -60,9 +66,10 @@ class LoginForm extends Component{
 								<input type = "button" onClick = {this.handleSubmit} className = "btn btn-success" value = "Submit"/>
 							</div>			
 						    <div><Link to = "/register">New user? Register Here</Link></div> 
-						</form>					
+						</form>	
+					 </div>				
 			);
 	}
 }
 
-export default LoginForm;
+export default Login;

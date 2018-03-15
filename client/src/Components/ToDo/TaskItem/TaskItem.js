@@ -3,15 +3,15 @@ import './TaskItem.css';
 
 class TaskItem extends Component{
 
+	constructor(props){
 
-	componentDidMount(){
-
+		super(props);
 	}
 
 	render(){		
-		// console.log("props" + this.props.tasks);
-		const tasksArray = this.props.tasks;
-		console.log("array",tasksArray);
+
+		let tasksArray = this.props.tasks;
+		console.log("props" + tasksArray);
 		const listItems = tasksArray.map((task) => 
 
 				<li className = "TaskItem" key={task['taskid']}>{task['taskdata']}<i className = "delete far fa-trash-alt"></i></li>
@@ -19,9 +19,11 @@ class TaskItem extends Component{
 				);
 
 		return(
-				<ul className = "todo">
-					{listItems}
-				</ul>
+				<div className = "Container">
+					<ul className = "todo">
+						{listItems}
+					</ul>
+				</div>
 			);
 	}
 }

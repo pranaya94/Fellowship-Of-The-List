@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Route}from 'react-router-dom';
 
-import LoginForm from './Components/Login/LoginForm/LoginForm';
+import Login from './Components/Login/Login';
 import Header from './Components/Header/Header';
 import ToDo from './Components/ToDo/ToDo';
 import RegisterForm from './Components/Register/RegisterForm/RegisterForm';
@@ -15,10 +15,10 @@ class App extends Component {
     return (
     	
 	      <div className="App">	      		      		
-	      		<Header />	 
-	      		<Route path="/" exact component={LoginForm} />       		
+	      <Header />	 
+	      		<Route path="/" exact component={Login} />       		
 				<Route path="/todo" exact component={ToDo} />	
-				<Route path="/register" exact component={RegisterForm} /> 				   			      			     
+				<Route path="/register" exact component={RegisterForm} /> 
 	      </div>
 	     
     );
